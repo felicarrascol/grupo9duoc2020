@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+	<title>Bienvenidos a HR!</title>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a href="{% url 'home' %}" class="navbar-brand">HR</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar Menu">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="menuNavegacion">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a href="{% url 'home' %}" class="nav-link">Inicio</a>
+						</li>
+						<!-- Boton Desplegable -->
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+								Productos
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a href="{% url 'trabajos' %}" class="dropdown-item">Trabajos</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a href="{% url 'contacto' %}" class="nav-link">Contacto</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="{% url 'login' %}" class="nav-link">Login</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<div class="row">
+			<div class="col">
+				<div class="carousel slide" id="slideshow" data-ride="carousel">
+					<!-- Indicadores -->
+					<ol class="carousel-indicators">
+						<li data-target="#slideshow" class="active" data-slide-to="0"></li>
+						<li data-target="#slideshow" data-slide-to="1"></li>
+						<li data-target="#slideshow" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Slides -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="{% static 'app/img/s1.png' %}"alt="" class="d-block w-100">
+						</div>
+						<div class="carousel-item">
+							<img src="{% static 'app/img/s2.jpeg' %}" alt="" class="d-block w-100">
+						</div>
+						<div class="carousel-item">
+							<img src="{% static 'app/img/s3.jpg' %}"alt="" class="d-block w-100">
+						</div>
+					</div>
+
+					<!-- Controles -->
+					<a href="#slideshow" class="carousel-control-prev" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Anterior</span>
+					</a>
+					<a href="#slideshow" class="carousel-control-next" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Siguiente</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<div class="py-4 border-bottom">
+					<h1 class="text-center">Bienvenidos a HR!</h1>
+				</div>
+			</div>
+		</div>	
+		</div>
+	</main>
+
+	<footer class="container">
+		<div class="row border-top py-5">
+			<div class="col">
+				<h3 class="lead">HR.com</h3>
+				<a href="#" class="btn btn-link">Acerca de</a>
+				<a href="#" class="btn btn-link">Contacto</a>
+			</div>
+			<div class="col text-right">
+				<a href="#" class="btn btn-link">Subir en Pagina</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="{% static 'app/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'app/js/popper.min.js' %}"></script>
+	<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

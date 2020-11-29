@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Contacto</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a href="{% url 'home' %}" class="navbar-brand">HR</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar Menu">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="menuNavegacion">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a href="{% url 'home' %}" class="nav-link">Inicio</a>
+						</li>
+						<!-- Boton Desplegable -->
+						<li class="nav-item dropdown">
+							<a href="" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+								Productos
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a href="{% url 'trabajos' %}" class="dropdown-item">Trabajos</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a href="{% url 'contacto' %}" class="nav-link">Contacto</a>
+						</li>
+						<li class="nav-item">
+							<a href="{% url 'login' %}" class="nav-link">Login</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="row">
+		<div class="col-12">
+			<div class="py-4 border-bottom">
+				<h1 class="text-center">Contacto</h1>
+			</div>
+		</div>
+	</div>	
+
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col">
+				<form action="">
+					<div class="form-group row">
+						<div class="col-12 col-md-6 mb-3">
+							<label for="nombre">Nombre</label>
+							<input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="pass">Contraseña</label>
+							<input type="password" class="form-control" placeholder="Contraseña" name="pass" id="pass">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-12 col-md-6 mb-3">
+							<label for="mensaje">Mensaje</label>
+							<textarea name="mensaje" id="mensaje" class="form-control"></textarea>
+						</div>
+
+						<div class="col-12 col-md-3 mb-3">
+							<label>Sexo</label>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" name="sexo" id="hombre" class="form-check-input mr-2">Hombre
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="radio" name="sexo" id="mujer" class="form-check-input mr-2">Mujer
+								</label>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-3 mb-3">
+							<label for="pais">Pais</label>
+							<select name="pais" id="pais" class="form-control">
+								<option value="Chile">Chile</option>
+								<option value="España">Argentina</option>
+								<option value="Colombia">Peru</option>
+								<option value="Colombia">Venezuela</option>
+								<option value="Colombia">Otro</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-12 text-center">
+							<label class="form-check-label">
+								<input type="checkbox" name="terminos" id="terminos" class="form-check-input mr-2 mb-3">Acepto Terminos y Condiciones
+							</label>
+							<div class="row justify-content-center">
+								<div class="col-12 col-sm-9 col-md-4">
+									<button class="btn btn-primary btn-block" type="submit">Enviar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<script src="{% static 'app/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'app/js/popper.min.js' %}"></script>
+	<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
